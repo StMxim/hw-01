@@ -32,4 +32,4 @@
 
 ## Посилання на живу сторінку
 
-[Переглянути сторінку](https://yourusername.github.io/hw-01/) 
+[Переглянути сторінку](https://stmxim.github.io/hw-01/) 
