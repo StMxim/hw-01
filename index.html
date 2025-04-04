@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Веб-сторінка - Лабораторна робота 1</title>
+    <title>Веб-сторінка - Лабораторна робота 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/mobile-menu.css">
 </head>
 <body>
     <header class="header">
@@ -24,6 +25,13 @@
                     <li class="nav-item"><a href="#contact" class="nav-link">Контакти</a></li>
                 </ul>
             </nav>
+            <button type="button" class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu" aria-label="Відкрити мобільне меню">
+                <div class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </button>
         </div>
     </header>
 
@@ -56,19 +64,25 @@
                 <h2 class="section-title">Наші послуги</h2>
                 <ul class="services-list">
                     <li class="services-item">
-                        <img src="./images/service-1.svg" alt="Веб-дизайн" width="80">
+                        <div class="icon-container">
+                            <img src="./images/service-1.svg" alt="Веб-дизайн" width="40" height="40">
+                        </div>
                         <h3 class="services-subtitle">Веб-дизайн</h3>
                         <p class="services-text">Створення сучасного та функціонального дизайну для вашого сайту</p>
                     </li>
                     <li class="services-item">
-                        <img src="./images/service-2.svg" alt="Розробка" width="80">
+                        <div class="icon-container">
+                            <img src="./images/service-2.svg" alt="Розробка" width="40" height="40">
+                        </div>
                         <h3 class="services-subtitle">Розробка</h3>
                         <p class="services-text">Розробка веб-сайтів з використанням новітніх технологій</p>
                     </li>
                     <li class="services-item">
-                        <img src="./images/service-3.svg" alt="SEO" width="80">
+                        <div class="icon-container">
+                            <img src="./images/service-3.svg" alt="SEO" width="40" height="40">
+                        </div>
                         <h3 class="services-subtitle">SEO оптимізація</h3>
-                        <p class="services-text">Просування вашого сайту у пошукових системах для збільшення конверсії</p>
+                        <p class="services-text">Просування вашого сайту у пошукових системах для збільшення конверсій</p>
                     </li>
                 </ul>
             </div>
@@ -114,35 +128,50 @@
             <div class="container">
                 <h2 class="section-title">Зв'яжіться з нами</h2>
                 <div class="contact-wrapper">
+                    <form class="contact-form" name="contact-form" autocomplete="off">
+                        <label class="form-label" for="name">
+                            Ім'я
+                            <input type="text" name="name" id="name" class="form-input" required placeholder="Ваше ім'я">
+                        </label>
+                        <label class="form-label" for="email">
+                            Email
+                            <input type="email" name="email" id="email" class="form-input" required placeholder="example@mail.com">
+                        </label>
+                        <label class="form-label" for="message">
+                            Повідомлення
+                            <textarea name="message" id="message" class="form-textarea" required placeholder="Напишіть ваше повідомлення..."></textarea>
+                        </label>
+                        <button type="submit" class="form-button">Надіслати</button>
+                    </form>
                     <div class="contact-info">
                         <p>Ми завжди відкриті для спілкування та готові відповісти на всі ваші запитання.</p>
                         <ul class="contact-list">
                             <li class="contact-item">
-                                <p>Телефон: +380 12 345 6789</p>
+                                <p>
+                                    <svg class="contact-icon" width="20" height="20" aria-hidden="true">
+                                        <use href="./images/icons/icons.svg#icon-phone"></use>
+                                    </svg>
+                                    <a href="tel:+380123456789">+380 12 345 6789</a>
+                                </p>
                             </li>
                             <li class="contact-item">
-                                <p>Email: info@webstudio.com</p>
+                                <p>
+                                    <svg class="contact-icon" width="20" height="20" aria-hidden="true">
+                                        <use href="./images/icons/icons.svg#icon-email"></use>
+                                    </svg>
+                                    <a href="mailto:info@webstudio.com">info@webstudio.com</a>
+                                </p>
                             </li>
                             <li class="contact-item">
-                                <p>Адреса: м. Київ, вул. Хрещатик, 1</p>
+                                <p>
+                                    <svg class="contact-icon" width="20" height="20" aria-hidden="true">
+                                        <use href="./images/icons/icons.svg#icon-location"></use>
+                                    </svg>
+                                    <span>м. Київ, вул. Хрещатик, 1</span>
+                                </p>
                             </li>
                         </ul>
                     </div>
-                    <form class="contact-form">
-                        <label class="form-label">
-                            Ім'я
-                            <input type="text" name="name" class="form-input" required>
-                        </label>
-                        <label class="form-label">
-                            Email
-                            <input type="email" name="email" class="form-input" required>
-                        </label>
-                        <label class="form-label">
-                            Повідомлення
-                            <textarea name="message" class="form-textarea" required></textarea>
-                        </label>
-                        <button type="submit" class="form-button">Надіслати</button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -178,5 +207,45 @@
             <p class="copyright">&copy; 2023 WebStudio. Усі права захищені.</p>
         </div>
     </footer>
+
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <button class="menu-toggle js-close-menu" aria-label="Закрити мобільне меню">
+            <div class="close-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+
+        <div class="mobile-menu-content">
+            <nav class="mobile-menu-navigation">
+                <ul class="mobile-menu-nav list">
+                    <li><a href="#about" class="link">Про нас</a></li>
+                    <li><a href="#services" class="link">Послуги</a></li>
+                    <li><a href="#portfolio" class="link">Портфоліо</a></li>
+                    <li><a href="#contact" class="link">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-bottom">
+                <div class="mobile-contacts-nav">
+                    <a href="tel:+380123456789" class="link phone" aria-label="Зателефонувати">
+                        +380 12 345 6789
+                    </a>
+                    <a href="mailto:info@webstudio.com" class="link email" aria-label="Написати email">
+                        info@webstudio.com
+                    </a>
+                </div>
+
+                <ul class="mobile-socials list">
+                    <li><a href="#" class="link" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" class="link" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" class="link" aria-label="LinkedIn">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"></script>
+    <script src="./js/mobile-menu.js"></script>
 </body>
-</html> 
+</html>
